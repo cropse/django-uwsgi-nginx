@@ -37,8 +37,8 @@ RUN pip3 install uwsgi
 
 # setup all the configfiles
 RUN echo "daemon off;" >> /etc/nginx/nginx.conf
-COPY nginx-app.conf /etc/nginx/sites-available/default
-COPY supervisor-app.conf /etc/supervisor/conf.d/
+COPY ./config/nginx-app.conf /etc/nginx/sites-available/default
+COPY ./config/supervisor-app.conf /etc/supervisor/conf.d/
 
 VOLUME /home/docker/code/
 
