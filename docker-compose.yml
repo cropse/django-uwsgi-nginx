@@ -2,7 +2,7 @@
 version: '2'
 
 services:
-  django-uwsgi:
+  django-uwsgi-nginx:
     # image: django-uwsgi-nginx:latest
     build:
       context: .

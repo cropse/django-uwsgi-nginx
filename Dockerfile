@@ -45,11 +45,11 @@ VOLUME /home/docker/code/
 # COPY requirements.txt and RUN pip install BEFORE adding the rest of your code, this will cause Docker's caching mechanism
 # to prevent re-installing (all your) dependencies when you made a change a line or two in your app.
 
-COPY app/requirements.txt /home/docker/code/app/
-RUN pip3 install -r /home/docker/code/app/requirements.txt
+# COPY app/requirements.txt /home/docker/code/app/
 
-# add (the rest of) our code
-# COPY . /home/docker/code/
+COPY ./config /home/docker/config/
+
+RUN pip3 install -r /home/docker/config/requirements.txt
 
 
 # install django, normally you would remove this step because your project would already
